@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
@@ -26,15 +26,22 @@ export default function HomePage() {
             </div>
             
             <Link to="/" className="flex-shrink-0">
-              <span className="text-3xl font-bold text-pink-500">ABAKAXI</span>
+              <div className="flex items-center">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                  <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" fill="#FF0066"/>
+                  <path d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24Z" fill="#FFFFFF"/>
+                  <path d="M16 20C18.2091 20 20 18.2091 20 16C20 13.7909 18.2091 12 16 12C13.7909 12 12 13.7909 12 16C12 18.2091 13.7909 20 16 20Z" fill="#FF0066"/>
+                </svg>
+                <span className="text-3xl font-bold text-pink-500">ABAKAXI</span>
+              </div>
             </Link>
             
             <div className="flex items-center space-x-4">
               <Link to="/account" className="text-gray-700 hover:text-pink-500 border border-gray-300 rounded-md px-4 py-2">
                 Minha Conta
               </Link>
-              <Link to="/prices" className="bg-pink-500 text-white rounded-md px-4 py-2 hover:bg-pink-600 shadow-md hover:shadow-lg transition-all duration-200">
-                VERIFICAR PREÇOS
+              <Link to="/prices" className="bg-pink-500 text-white rounded-md px-4 py-2 hover:bg-pink-600 shadow-md hover:shadow-lg transition-all duration-200 font-medium uppercase">
+                Verificar Preços
               </Link>
             </div>
           </div>
@@ -52,8 +59,8 @@ export default function HomePage() {
               Instantâneo. Preços incríveis. Grande coração.
             </p>
             <div className="flex justify-center">
-              <Link to="/prices" className="bg-pink-500 text-white text-lg font-medium rounded-md px-8 py-4 hover:bg-pink-600 shadow-lg hover:shadow-xl transition-all duration-200">
-                VERIFICAR NOSSOS PREÇOS
+              <Link to="/prices" className="bg-pink-500 text-white text-lg font-medium rounded-md px-8 py-4 hover:bg-pink-600 shadow-lg hover:shadow-xl transition-all duration-200 uppercase">
+                Verificar Nossos Preços
               </Link>
             </div>
           </div>
@@ -225,8 +232,8 @@ export default function HomePage() {
                   <h3 className="text-2xl font-bold text-center text-gray-800 mb-2">{product.title}</h3>
                   <p className="text-center text-gray-600 mb-6">{product.description}</p>
                   <div className="flex justify-center">
-                    <Link to="/prices" className="bg-pink-500 text-white rounded-md px-6 py-3 font-medium hover:bg-pink-600 transition-all duration-200">
-                      VERIFICAR PREÇOS
+                    <Link to="/prices" className="bg-pink-500 text-white rounded-md px-6 py-3 font-medium hover:bg-pink-600 transition-all duration-200 uppercase">
+                      Verificar Preços
                     </Link>
                   </div>
                 </div>
@@ -273,8 +280,8 @@ export default function HomePage() {
                   <h3 className="text-2xl font-bold text-center text-gray-800 mb-2">{product.title}</h3>
                   <p className="text-center text-gray-600 mb-6">{product.description}</p>
                   <div className="flex justify-center">
-                    <Link to="/prices" className="bg-pink-500 text-white rounded-md px-6 py-3 font-medium hover:bg-pink-600 transition-all duration-200">
-                      VERIFICAR PREÇOS
+                    <Link to="/prices" className="bg-pink-500 text-white rounded-md px-6 py-3 font-medium hover:bg-pink-600 transition-all duration-200 uppercase">
+                      Verificar Preços
                     </Link>
                   </div>
                 </div>
@@ -294,76 +301,85 @@ export default function HomePage() {
             Instantâneo em Tudo
           </h2>
           
-          <div className="text-center mb-16">
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Maya, nosso charmoso bot de inteligência artificial, vai criar o seguro perfeito para você.
-              Não poderia ser mais fácil ou rápido
-            </p>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <div className="text-right">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Em apenas</h3>
-              <p className="text-4xl font-bold text-gray-800">90 segundos</p>
-            </div>
-            
-            <div className="relative w-64 h-96 mx-8">
-              <div className="absolute inset-0 border-4 border-gray-300 rounded-3xl"></div>
-              <div className="absolute inset-x-0 top-0 h-6 bg-gray-300 rounded-t-3xl"></div>
-              <div className="absolute inset-0 flex items-center justify-center p-6">
-                <div className="w-full space-y-4">
-                  <div className="bg-gray-200 h-12 w-3/4 rounded-full"></div>
-                  <div className="bg-gray-200 h-12 w-full rounded-full"></div>
-                  <div className="flex justify-end">
-                    <div className="bg-pink-500 text-white px-4 py-2 rounded-full">
-                      Pronto.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="relative mx-auto w-64 h-128 border-8 border-gray-800 rounded-3xl overflow-hidden shadow-xl">
+                <div className="absolute inset-0 bg-white">
+                  <div className="absolute top-0 inset-x-0 h-6 bg-gray-800 flex items-center justify-center">
+                    <div className="w-16 h-1 bg-gray-600 rounded-full"></div>
+                  </div>
+                  <div className="absolute top-6 inset-0 flex items-center justify-center">
+                    <div className="text-center">
+                      <svg className="w-24 h-24 mx-auto text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <p className="mt-4 text-xl font-bold">Sinistro Aprovado</p>
+                      <p className="mt-2 text-gray-600">Pagamento em 3 segundos</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="text-left">
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">3 Minutos</h3>
-              <p className="text-4xl font-bold text-gray-800">Para ser pago</p>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                Sinistros pagos em segundos, não semanas
+              </h3>
+              <p className="text-lg text-gray-600 mb-8">
+                Nossa tecnologia de IA aprova 30% dos sinistros instantaneamente e transfere o dinheiro na hora. Sem papelada, sem espera.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  { time: "3 segundos", action: "Pagamento mais rápido" },
+                  { time: "3 minutos", action: "Tempo médio para registrar um sinistro" },
+                  { time: "2 dias", action: "Tempo médio para resolução completa" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="flex-shrink-0 w-16 text-right mr-4">
+                      <span className="font-bold text-pink-500">{item.time}</span>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-700">{item.action}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Switch Section */}
+      {/* Already Insured Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-8">
-            Já tem seguro? Nós ajudamos você a mudar!
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-6">
+            Já tem seguro?
           </h2>
-          
-          <p className="text-xl text-center text-gray-700 mb-16 max-w-3xl mx-auto">
-            Pessoas deixaram estas seguradoras para se juntar à ABAKAXI:
+          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+            80% dos clientes ABAKAXI vieram de outras seguradoras
           </p>
           
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Assurante, Farmers, Homesite, Progressive, Stillwater e mais...", percentage: "31%" },
-              { name: "Allstate", percentage: "19%" },
-              { name: "State Farm", percentage: "16%" },
-              { name: "Travelers", percentage: "14%" },
-              { name: "Liberty Mutual", percentage: "10%" },
-              { name: "Geico", percentage: "10%" }
-            ].map((company, index) => (
-              <div key={index} className="bg-white rounded-full py-4 px-8 shadow-md">
-                <p className="text-center">
-                  <span className="block text-3xl font-bold text-gray-800">{company.percentage}</span>
-                  <span className="text-sm text-gray-600">{company.name}</span>
-                </p>
+              {
+                stat: "2 minutos",
+                description: "para fazer a troca para a ABAKAXI"
+              },
+              {
+                stat: "80%",
+                description: "dos clientes economizam ao mudar"
+              },
+              {
+                stat: "R$110",
+                description: "economia média anual"
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-8 text-center">
+                <div className="text-4xl font-bold text-pink-500 mb-4">{item.stat}</div>
+                <p className="text-gray-700">{item.description}</p>
               </div>
             ))}
-          </div>
-          
-          <div className="flex justify-center">
-            <Link to="/switch" className="bg-pink-500 text-white rounded-md px-8 py-4 font-medium hover:bg-pink-600 shadow-lg hover:shadow-xl transition-all duration-200">
-              VERIFICAR PREÇOS E MUDAR
-            </Link>
           </div>
         </div>
       </section>
@@ -372,203 +388,179 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-            Como a ABAKAXI Funciona
+            Como Funciona
           </h2>
           
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <p className="text-xl text-gray-700">
-              A ABAKAXI inverte o modelo tradicional de seguros. Tratamos os prêmios que você paga como se fossem seu dinheiro, não nosso. 
-              Com a ABAKAXI, tudo se torna simples e transparente. Cobramos uma taxa fixa, pagamos sinistros super rápido, e 
-              <Link to="/giveback" className="text-pink-500 hover:text-pink-600"> devolvemos </Link> 
-              o que sobra para causas que você se importa.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="50" cy="50" r="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <path d="M30,50 L70,50 M50,30 L50,70" stroke="#333" strokeWidth="2"/>
-                  <circle cx="50" cy="50" r="10" fill="#FF0066"/>
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="space-y-12">
+                {[
+                  {
+                    title: "Você paga seu prêmio mensal",
+                    description: "Sua assinatura mensal vai para um fundo comum com outros clientes similares."
+                  },
+                  {
+                    title: "Nós pagamos sinistros rapidamente",
+                    description: "Quando alguém tem um sinistro, pagamos instantaneamente do fundo comum."
+                  },
+                  {
+                    title: "Sobras vão para causas sociais",
+                    description: "No final do ano, o dinheiro não usado para sinistros vai para causas que você escolher."
+                  }
+                ].map((step, index) => (
+                  <div key={index} className="flex">
+                    <div className="flex-shrink-0 mr-4">
+                      <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 font-bold">
+                        {index + 1}
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h3>
+                      <p className="text-gray-600">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Uma taxa fixa</h3>
-              <p className="text-gray-700">para administrar tudo</p>
             </div>
             
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="50" cy="50" r="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <path d="M30,50 C40,30 60,70 70,50" stroke="#333" strokeWidth="2"/>
-                  <circle cx="30" cy="50" r="5" fill="#FF0066"/>
-                  <circle cx="70" cy="50" r="5" fill="#FF0066"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Pagamos sinistros</h3>
-              <p className="text-gray-700">super rápido</p>
+            <div className="relative">
+              <svg className="w-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="200" cy="200" r="150" stroke="#333" strokeWidth="2" fill="none" />
+                <path d="M200,50 C200,50 300,125 300,200 C300,275 200,350 200,350 C200,350 100,275 100,200 C100,125 200,50 200,50 Z" stroke="#333" strokeWidth="2" fill="none" />
+                <circle cx="200" cy="125" r="25" stroke="#333" strokeWidth="2" fill="none" />
+                <circle cx="200" cy="275" r="25" stroke="#333" strokeWidth="2" fill="none" />
+                <circle cx="125" cy="200" r="25" stroke="#333" strokeWidth="2" fill="none" />
+                <circle cx="275" cy="200" r="25" stroke="#333" strokeWidth="2" fill="none" />
+                <path d="M175,125 L225,125" stroke="#333" strokeWidth="2" />
+                <path d="M175,275 L225,275" stroke="#333" strokeWidth="2" />
+                <path d="M125,175 L125,225" stroke="#333" strokeWidth="2" />
+                <path d="M275,175 L275,225" stroke="#333" strokeWidth="2" />
+              </svg>
             </div>
-            
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="50" cy="50" r="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <path d="M50,30 L50,70 M30,50 L70,50" stroke="#333" strokeWidth="2"/>
-                  <path d="M40,40 L60,60 M40,60 L60,40" stroke="#333" strokeWidth="2"/>
-                  <circle cx="50" cy="50" r="10" fill="#FF0066"/>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Se sobrar dinheiro,</h3>
-              <p className="text-gray-700">devolvemos para causas</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {[
-              "DirectRelief", "BornThisWay", "ToWriteLove", "Malala", "CharityWater", 
-              "Cure", "NewStory", "AmericanForests", "RedCross", "TeachForAmerica",
-              "350org", "ACLU", "MarchForOurLives", "TrevorProject"
-            ].map((charity, index) => (
-              <div key={index} className="text-gray-600 font-bold">
-                {charity}
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8 text-sm text-gray-500">
-            * Sujeito à aprovação do conselho e ao cumprimento de certos padrões financeiros pela empresa. Esta seção não se aplica ao seguro de vida.
           </div>
         </div>
       </section>
 
-      {/* Company Section */}
+      {/* Credentials Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="50" cy="50" r="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <text x="50" y="55" textAnchor="middle" fontSize="12" fill="#333">B-CORP</text>
-                  <text x="50" y="70" textAnchor="middle" fontSize="12" fill="#333">Certified</text>
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Seguradora Licenciada",
+                description: "Somos uma seguradora licenciada, não apenas um corretor. Isso significa que podemos oferecer preços melhores e processar sinistros mais rapidamente."
+              },
+              {
+                title: "Ressegurada por Gigantes",
+                description: "Nossas apólices são resseguradas por algumas das maiores resseguradoras do mundo, garantindo que possamos pagar sinistros de qualquer tamanho."
+              },
+              {
+                title: "Avaliada em R$ 2 Bilhões",
+                description: "Somos uma das insurtechs mais bem avaliadas do mundo, com investidores de primeira linha e capital para crescer e inovar."
+              }
+            ].map((credential, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-8">
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{credential.title}</h3>
+                <p className="text-gray-600">{credential.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Projetada para Impacto Social</h3>
-              <p className="text-gray-700">
-                A ABAKAXI Inc. é uma Empresa de Benefício Público e certificada B-Corp. O impacto social faz parte da nossa missão legal e modelo de negócios - não apenas marketing
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <rect x="30" y="30" width="40" height="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <text x="50" y="55" textAnchor="middle" fontSize="12" fill="#333">NYSE</text>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">NYSE:ABKX</h3>
-              <p className="text-gray-700">
-                A ABAKAXI é uma empresa de capital aberto, listada na Bolsa de Valores de Nova York sob o símbolo ABKX
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-32 h-32 mx-auto mb-6">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                  <circle cx="50" cy="50" r="40" stroke="#333" strokeWidth="2" fill="none"/>
-                  <text x="50" y="45" textAnchor="middle" fontSize="24" fill="#333">A</text>
-                  <text x="50" y="65" textAnchor="middle" fontSize="12" fill="#333">EXCEPTIONAL</text>
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Classificação A e Respaldo de Gigantes</h3>
-              <p className="text-gray-700">
-                A ABAKAXI tem classificação A, é totalmente regulamentada e ressegurada pelos nomes mais confiáveis do planeta
-              </p>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 bg-pink-500 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">
+            Pronto para um seguro melhor?
+          </h2>
+          <p className="text-xl mb-12 max-w-3xl mx-auto">
+            Junte-se a milhares de brasileiros que já descobriram um jeito melhor de se proteger.
+          </p>
+          <Link to="/prices" className="inline-block bg-white text-pink-500 text-lg font-bold rounded-md px-8 py-4 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-200 uppercase">
+            Verificar Preços Agora
+          </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-gray-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-bold mb-4">LOCATÁRIOS</h3>
+              <h3 className="text-lg font-bold mb-4">Produtos</h3>
               <ul className="space-y-2">
-                <li><Link to="/renters" className="text-gray-400 hover:text-pink-500">Seguro para Locatários</Link></li>
-                <li><Link to="/explaining-renters" className="text-gray-400 hover:text-pink-500">Explicando Locatários</Link></li>
-                <li><Link to="/what-is-renters" className="text-gray-400 hover:text-pink-500">O que é Seguro para Locatários</Link></li>
-                <li><Link to="/renters-coverage" className="text-gray-400 hover:text-pink-500">Cobertura para Locatários</Link></li>
-                <li><Link to="/renters-cost" className="text-gray-400 hover:text-pink-500">Custo do Seguro para Locatários</Link></li>
-                <li><Link to="/how-to-get-renters" className="text-gray-400 hover:text-pink-500">Como Obter Seguro para Locatários</Link></li>
-                <li><Link to="/car-renters-bundle" className="text-gray-400 hover:text-pink-500">Pacote Carro e Locatários</Link></li>
+                <li><Link to="/renters" className="text-gray-300 hover:text-white">Locatários</Link></li>
+                <li><Link to="/homeowners" className="text-gray-300 hover:text-white">Proprietários</Link></li>
+                <li><Link to="/car" className="text-gray-300 hover:text-white">Automóvel</Link></li>
+                <li><Link to="/pet" className="text-gray-300 hover:text-white">Pet</Link></li>
+                <li><Link to="/life" className="text-gray-300 hover:text-white">Vida</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-bold mb-4">PROPRIETÁRIOS</h3>
+              <h3 className="text-lg font-bold mb-4">Empresa</h3>
               <ul className="space-y-2">
-                <li><Link to="/homeowners" className="text-gray-400 hover:text-pink-500">Seguro Residencial</Link></li>
-                <li><Link to="/explaining-homeowners" className="text-gray-400 hover:text-pink-500">Explicando Residencial</Link></li>
-                <li><Link to="/what-is-homeowners" className="text-gray-400 hover:text-pink-500">O que é Seguro Residencial</Link></li>
-                <li><Link to="/homeowners-coverage" className="text-gray-400 hover:text-pink-500">Cobertura Residencial</Link></li>
-                <li><Link to="/homeowners-cost" className="text-gray-400 hover:text-pink-500">Custo do Seguro Residencial</Link></li>
-                <li><Link to="/how-much-home-insurance" className="text-gray-400 hover:text-pink-500">Quanto Seguro Residencial Preciso</Link></li>
-                <li><Link to="/car-home-bundle" className="text-gray-400 hover:text-pink-500">Pacote Carro e Residencial</Link></li>
+                <li><Link to="/about" className="text-gray-300 hover:text-white">Sobre Nós</Link></li>
+                <li><Link to="/careers" className="text-gray-300 hover:text-white">Carreiras</Link></li>
+                <li><Link to="/press" className="text-gray-300 hover:text-white">Imprensa</Link></li>
+                <li><Link to="/giveback" className="text-gray-300 hover:text-white">Programa de Retorno</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-bold mb-4">AUTOMÓVEL</h3>
+              <h3 className="text-lg font-bold mb-4">Recursos</h3>
               <ul className="space-y-2">
-                <li><Link to="/car" className="text-gray-400 hover:text-pink-500">Seguro de Automóvel</Link></li>
-                <li><Link to="/explaining-car" className="text-gray-400 hover:text-pink-500">Explicando Automóvel</Link></li>
-                <li><Link to="/pay-per-mile" className="text-gray-400 hover:text-pink-500">Seguro por Quilômetro</Link></li>
-                <li><Link to="/car-coverage" className="text-gray-400 hover:text-pink-500">Cobertura de Automóvel</Link></li>
-                <li><Link to="/car-cost" className="text-gray-400 hover:text-pink-500">Custo do Seguro de Automóvel</Link></li>
-                <li><Link to="/comprehensive-car" className="text-gray-400 hover:text-pink-500">Seguro Compreensivo</Link></li>
-                <li><Link to="/car-by-vehicle" className="text-gray-400 hover:text-pink-500">Seguro por Veículo</Link></li>
+                <li><Link to="/faq" className="text-gray-300 hover:text-white">Perguntas Frequentes</Link></li>
+                <li><Link to="/blog" className="text-gray-300 hover:text-white">Blog</Link></li>
+                <li><Link to="/help" className="text-gray-300 hover:text-white">Central de Ajuda</Link></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white">Contato</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-bold mb-4">PET</h3>
+              <h3 className="text-lg font-bold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><Link to="/pet" className="text-gray-400 hover:text-pink-500">Seguro Pet</Link></li>
-                <li><Link to="/explaining-pet" className="text-gray-400 hover:text-pink-500">Explicando Pet</Link></li>
-                <li><Link to="/dog-insurance" className="text-gray-400 hover:text-pink-500">Seguro para Cães</Link></li>
-                <li><Link to="/cat-insurance" className="text-gray-400 hover:text-pink-500">Seguro para Gatos</Link></li>
-                <li><Link to="/compare-pet" className="text-gray-400 hover:text-pink-500">Comparar Seguro Pet</Link></li>
-                <li><Link to="/pet-coverage" className="text-gray-400 hover:text-pink-500">Cobertura Pet</Link></li>
-                <li><Link to="/pet-cost" className="text-gray-400 hover:text-pink-500">Custo do Seguro Pet</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-bold mb-4">RECURSOS</h3>
-              <ul className="space-y-2">
-                <li><Link to="/blog" className="text-gray-400 hover:text-pink-500">Blog</Link></li>
-                <li><Link to="/faq" className="text-gray-400 hover:text-pink-500">FAQ</Link></li>
-                <li><Link to="/where-live" className="text-gray-400 hover:text-pink-500">Onde Estamos</Link></li>
-                <li><Link to="/dictionary" className="text-gray-400 hover:text-pink-500">Dicionário de Seguros</Link></li>
-                <li><Link to="/sitemap" className="text-gray-400 hover:text-pink-500">Mapa do Site</Link></li>
-              </ul>
-              
-              <h3 className="text-lg font-bold mt-8 mb-4">EMPRESA</h3>
-              <ul className="space-y-2">
-                <li><Link to="/join" className="text-gray-400 hover:text-pink-500">Junte-se à Equipe</Link></li>
-                <li><Link to="/partners" className="text-gray-400 hover:text-pink-500">Programa de Parceiros</Link></li>
-                <li><Link to="/investors" className="text-gray-400 hover:text-pink-500">Relações com Investidores</Link></li>
-                <li><Link to="/transparency" className="text-gray-400 hover:text-pink-500">Transparência</Link></li>
-                <li><Link to="/reviews" className="text-gray-400 hover:text-pink-500">Avaliações</Link></li>
+                <li><Link to="/terms" className="text-gray-300 hover:text-white">Termos de Uso</Link></li>
+                <li><Link to="/privacy" className="text-gray-300 hover:text-white">Política de Privacidade</Link></li>
+                <li><Link to="/licenses" className="text-gray-300 hover:text-white">Licenças</Link></li>
               </ul>
             </div>
           </div>
           
-          <div className="mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-            <p>© 2025 ABAKAXI Inc. Todos os direitos reservados.</p>
+          <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <Link to="/" className="flex items-center">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                  <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" fill="#FF0066"/>
+                  <path d="M16 24C20.4183 24 24 20.4183 24 16C24 11.5817 20.4183 8 16 8C11.5817 8 8 11.5817 8 16C8 20.4183 11.5817 24 16 24Z" fill="#FFFFFF"/>
+                  <path d="M16 20C18.2091 20 20 18.2091 20 16C20 13.7909 18.2091 12 16 12C13.7909 12 12 13.7909 12 16C12 18.2091 13.7909 20 16 20Z" fill="#FF0066"/>
+                </svg>
+                <span className="text-xl font-bold">ABAKAXI</span>
+              </Link>
+            </div>
+            
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-300 hover:text-white">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" className="text-gray-300 hover:text-white">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center text-gray-400 text-sm">
+            <p>&copy; {new Date().getFullYear()} ABAKAXI Seguros. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
